@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Appendix</title>
+</head>
+<body>
+	<h1>Appendix</h1>
+	<button onclick="window.location.href='index.html';">Home</button>
+	<button onclick="window.location.href='filterpaper.html';">Return</button>
+	
+	<h2>Appendix 1 - Frequency dependence of I, and transfer function</h2>
+	<p>The circuit as seen in <a href="figs/fig2.html">Fig. 2</a> can be treated as a potential divider with resistances (or in this case impedances) of Z_C & Z_R for the capacitor and resistor. 
+		<br><img src="img/appequ1.PNG">
+	</p>
+	<p>If we let s=iω=2πif</p>
+	<br> 
+		
+	<p>
+	Now <img src="img/appequ2.PNG">
+	</p>	
+	<p>
+		As the same current passes through the resistor and the capacitor, so the voltage across the capacitor is:
+	</p>
+	<img src="img/appequ3.PNG">
+	<br>
+		The transfer function of the filter is defined as:
+	<br>
+	<img src="img/appequ4.PNG">
+
+	<h2>Appendix 2 - Bilinear Transform</h2>
+	<p>
+		The substitution for the transform is:
+	<img src="img/appequ5.png"> Where z−1represents one sample delay, such that <img src="img/appequ6.PNG">
+	<p>If we substitute this into our result for H(s) from appendix 1, we get:</p>
+	<img src="img/appequ7.PNG">
+	<p>This can be simplified down to:</p>
+	<img src="img/appequ8.PNG">
+
+	<h2>Appendix 3 - Decimal Point Position & Sign Extension</h2>
+	<p>Imagine we have 2 (arbitrary) decimal numbers, say 1000.942, and 50.95002. The product of these numbers is: 50998.01491884. Notice that the total length of the product is the sum of the lengths it's constituents, and the position of the decimal point is now 8 digits in, the sum of the positions of the starting decimal point positions.</p>
+	<p>Binary numbers work in the same way: 10010110 and 11000101 = 0111001101101110</p>
+
+
+	
+</body>
+</html>
