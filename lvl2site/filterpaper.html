@@ -37,7 +37,7 @@
 		(or at least to send serial data to the DAC card). 
 	</p>
 	<div class="square rightimg">
-		<img src="figs/fig1.PNG" width="300" alt="Fig. 1: A Flow Diagram for a Second Order IIR Filter">
+		<a href="figs/fig1.html"><img src="figs/fig1.PNG" width="300" alt="Fig. 1: A Flow Diagram for a Second Order IIR Filter"></a>
 	</div>
 <!-- <br> -->
 	<p>
@@ -67,7 +67,8 @@
 		likely negatively effect the quality of the output. 
 	</p>
 	<div class="leftimg">
-		<img src="figs/fig2.png" alt="Fig.2: A basic analogue filter circuit" width="300">
+		<a href="figs/fig2.html"><img src="figs/fig2.png" alt="Fig.2: A basic analogue filter circuit" width="300"></a>
+		
 	</div>
 	<p>
 		Given that analogue filters are hard wired circuits, it is difficult to reconfigure them, requiring resoldering new components in place of those already installed, whereas a digital filter merely requires a change in variables. Electrical components also tend to have a limited accuracy (usually +/- 5%), and degrade over time (eventually requiring replacement), which, when we require very precise measurements, is not ideal.
@@ -77,7 +78,8 @@
 
 	<b>A Digital Passthrough</b>
 	<div class="rightimg">
-		<img src="figs/fig3.png" alt="Fig. 3: Block diagram for 'straight through' filter" width="400">
+		<a href="figs/fig3.html"><img src="figs/fig3.png" alt="Fig. 3: Block diagram for 'straight through' filter" width="400"></a>
+		
 	</div> 
 	<p>To start building our filter, we first wanted a clean slate, of sorts. A setup that we could simply insert out filter diagram into, and have it work. So we began by building a simple ‘straight through’ digital filter, 
 		that would carry out no signal processing, simply convert the incoming 
@@ -85,15 +87,17 @@
 		output (<a href="figs/fig3.html">Fig. 3</a>). In the case of the ADC, we can use a built in block from Vivado. We take the 16 bit output of this and take the most significant 12 bits (because our DAC card can only take 12 bits of data, 
 		requiring some config info to be given to it too), and append ‘0000’ to the start of it 
 		<div class="leftimg">
-			 <img src="figs/fig4.png" alt="Fig. 4: Here we append '0000' to the beginning of our data output">
+			<a href="figs/fig4.html"><img src="figs/fig4.png" alt="Fig. 4: Here we append '0000' to the beginning of our data output"></a>
+			 
 		</div>
-		This is then built into an IP block, so that we can easily manipulate what is between our two converters. <div class="rightimg"><img src="figs/fig5.png" width="300"></div>
+		This is then built into an IP block, so that we can easily manipulate what is between our two converters. <div class="rightimg"><a href="figs/fig5.html"><img src="figs/fig5.png" width="300"></a></div>
 		A DAC block is also required, to reconvert our output, however there is no inbuilt on fit for our purpose, so we had to build our own. Our DAC card takes a serial input, so we had to put together a (less than
 	 	beautiful) series of clocks and counters in order for our data output to be fed to the card in the correct form. 
 	</p>
 
 	<div class="leftimg">
-		<img src="figs/fig6.png" width="400">
+		<a href="figs/fig6.html"><img src="figs/fig6.png" width="400"></a>
+		
 	</div>
 	<b>The Code:</b>
 	<P>
@@ -105,10 +109,12 @@
 	<!-- These 2 need a flex box -->
 	<div class="rightimg fig">
 		<div>
-		<img src="figs/fig7.png" width="400">
+			<a href="figs/fig7.html"><img src="figs/fig7.png" width="400"></a>
+		
 		</div>
 		<div>
-		<img src="figs/fig8.png" width="400">
+			<a href="figs/fig8.html"><img src="figs/fig8.png" width="400"></a>
+		
 		</div>
 	</div>
 
@@ -147,7 +153,8 @@
 		terminal can communicate with the FPGA, to transmit our gain input and receive any feedback
 		messages. This made the whole block diagram much more complicated (<a href="figs/fig9.html">Fig. 9</a>)
 		<div class="rightimg">
-			<img src="figs/fig9.png" width="700">
+			<a href="figs/fig9.html"><img src="figs/fig9.png" width="700"></a>
+			
 		</div>
 	</p>
 	<p>
@@ -155,7 +162,8 @@
 	the memory from the MicroBlaze, instead of our switches. Once we had our MicroBlaze, we could write some C code to control the gain and memory:
 	</p>
 	<div class="leftimg">
-		<img src="figs/fig10.png" width="200">
+		<a href="figs/fig10.html"><img src="figs/fig10.png" width="200"></a>
+		
 	</div>	
 	<b>The Code:</b>
 	<p>
@@ -175,9 +183,8 @@
 		in <a href="figs/fig8.html">Fig. 8</a>). It is probably easiest to start by building up a 1st order filter, then once that is complete we can just add a second layer with extra memory banks.
 	</p>
 	<div class="fig">
-	<img src="figs/fig11.png">
-
-	<img src="figs/fig12.png">
+		<a href="figs/fig11.html"><img src="figs/fig11.png"></a>
+		<a href="figs/fig12.html"><img src="figs/fig12.png"></a>
 	</div>
 
 	<button onclick="window.open('appendix.html', '_blank')">appendix</button>
